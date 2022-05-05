@@ -13,7 +13,7 @@ def get_excluded(fact):
         return (*fact[0:3], True)
 
 def get_actual(schema, facts):
-    dict_schema = dict((x, y) for x, _, y in schema)
+    dict_schema = dict((attribute, value) for attribute, _, value in schema)
 
     added = list(filter(get_added, facts))
     excluded = list(filter(None, map(get_excluded,facts)))
